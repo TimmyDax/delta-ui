@@ -22,10 +22,7 @@
 		text-shadow: 0 1px 1px rgba(0,0,0,0.4);
 		box-shadow: inset 0 0 1px rgba(255,255,255,0.17);
 		padding: 0 14px 0 24px;
-
-		&:active {
-			background-color: @tab-background-color-down;
-		}
+		max-width: none;
 
 		&.active {
 		  color: @text-color-selected;
@@ -117,4 +114,28 @@
 		border-radius: 0;
 	}
 
+}
+
+
+.pane {
+	.tab-bar {
+		.tab {
+			background-color: fade(@tab-background-color, 30%);
+			&.active {
+				background-color: @tab-background-color;
+			}
+		}
+	}
+
+	&.active .tab-bar {
+		.tab {
+			background-color: @tab-background-color;
+			&.active {
+				background-color: @tab-background-color-active;
+			}
+			&:active {
+				background-color: @tab-background-color-down;
+			}
+		}
+	}
 }

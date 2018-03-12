@@ -17,19 +17,20 @@
 @text-color-highlight: lighten(@text-color, 5%);
 @text-color-selected: lighten(@text-color, 13%);
 
-@text-color-info: hsl(0, 100%, 70%);
+@text-color-info: lighten(@background-color-atom, 30%);
 @text-color-success: hsl(140, 44%, 62%);
 @text-color-warning: hsl(36, 60%, 72%);
 @text-color-error: hsl(9, 100%, 64%);
 
 // Background colors
-@background-color-info:    @status-bar-background-color;
+@background-color-info:    @background-color-atom;
 @background-color-success: hsl(160,  70%, 36%);
 @background-color-warning: hsl(32,   60%, 50%);
 @background-color-error:   hsl(0,    70%, 50%);
 
 @background-color-atom-top: #b3e299;
 @background-color-atom-bottom: #01a070;
+@background-color-atom: mix(@background-color-atom-top, @background-color-atom-bottom, 50%);
 
 @background-color-highlight: lighten(@base-background-color, 5%);
 @background-color-selected: lighten(@base-background-color, 10%);
@@ -76,6 +77,9 @@
 @tree-view-border-color: @base-border-color;
 
 @status-bar-background-color: darken(@base-background-color, 9%);
+
+@tooltip-background-color: @status-bar-background-color;
+@tooltip-text-color: darken(@text-color, 20%);
 
 // Site colors
 @ui-site-color-1: hsl(208, 100%, 50%); // blue
