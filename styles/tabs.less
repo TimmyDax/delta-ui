@@ -22,7 +22,7 @@
 		text-shadow: 0 1px 1px rgba(0,0,0,0.4);
 		box-shadow: inset 0 0 1px rgba(255,255,255,0.17);
 		padding: 0 14px 0 24px;
-		max-width: none;
+		max-width: @tab-max-width;
 
 		&.active {
 		  color: @text-color-selected;
@@ -132,6 +132,9 @@
 			background-color: @tab-background-color;
 			&.active {
 				background-color: @tab-background-color-active;
+				&:only-child {
+					background-color: fade(@tab-background-color-active, 80%);
+				}
 			}
 			&:active {
 				background-color: @tab-background-color-down;
