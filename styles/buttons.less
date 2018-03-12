@@ -6,25 +6,21 @@
 
 
 .btn {
-  color: lighten(@text-color, 6%);
-  background-color: @button-background-color;
-  &:hover,
-  &:focus {
-    color: @text-color-highlight;
-    background-color: @button-background-color-hover;
-  }
-  &:active {
-    color: fade(@text-color-selected, 66%);
-    background-color: darken(@button-background-color, 2%);
-  }
-  &.selected {
-    color: @text-color-selected;
-    background-color: @button-background-color-selected;
-  }
-  &:focus,
-  &:focus:active {
-    outline: none;
-  }
+
+	&, &:hover, &:focus {
+		color: lighten(@text-color, 6%);
+		background-color: @button-background-color;
+	}
+
+	&:active, &.selected, &.selected:hover {
+		color: @button-color-active;
+		background-color: @button-background-color-active;
+	}
+
+	&:focus,
+	&:focus:active {
+		outline: none;
+	}
 }
 
 
@@ -59,5 +55,5 @@
 // Button Group -----------------------
 
 .btn-group > .btn {
-  border-color: hsla(0,0%,0%,.2);
+	border: 0px transparent;
 }
