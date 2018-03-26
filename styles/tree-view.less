@@ -5,16 +5,85 @@
 // Used to explore and open files in the current project.
 // Overrides: atom/tree-view
 
+@disclosure-triangle-width: 12px;
 
 .tree-view-resizer {
-  border-right: 1px solid @base-border-color;
+	border-right: 1px solid @base-border-color;
 }
 
 .tree-view {
-  color: @text-color;
-  background-color: @tree-view-background-color;
+	color: @tree-view-color;
+	background-color: @tree-view-background-color;
 
-  .list-item.selected {
-    color: @text-color-selected;
-  }
+	.list-tree {
+		color: @tree-view-color;
+
+		&.has-collapsable-children {
+			.list-nested-item {
+				& > .list-item {
+					&:before {
+						content: '';
+						background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve"><polygon fill="#FFFFFF" points="8,14.152 4.5,8.076 1,2 8,2 15,2 11.5,8.076 "/></svg>');
+					    background-position: 50% 50%;
+						background-repeat: no-repeat;
+						background-size: 9px;
+						opacity: 0.5;
+						margin-right: @ui-spacing;
+					    vertical-align: middle;
+						width: @disclosure-triangle-width;
+						transition: transform 0.04s ease-out;
+					}
+				}
+
+				&.collapsed {
+					& > .list-item {
+						&:before {
+							transform: rotate(-90deg);
+						}
+					}
+				}
+
+				& > .list-tree,
+				& > .list-group {
+				 	& > li {
+						padding-left: (@ui-spacing + @disclosure-triangle-width);
+					}
+				}
+
+				&.selected {
+					& > .list-item {
+						&:before {
+							opacity: 0.89;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.status-ignored .name {
+		color: fade(@tree-view-color, 80);
+	}
+}
+
+.atom-dock-inner {
+	&.left,
+	&.right {
+		min-width: 100px;
+	}
+}
+
+.atom-dock-toggle-button {
+	display: none;
+}
+
+.list-group .selected::before,
+.list-tree .selected::before,
+.github-StagingView-group.is-focused .is-selected,
+.github-StagingView:focus .github-StagingView-group.is-focused .is-selected,
+.github-FilePatchView:focus .github-HunkView.is-selected.is-hunkMode .github-HunkView-title,
+.github-FilePatchView:focus .github-HunkView.is-selected.is-hunkMode .github-HunkView-header,
+.github-FilePatchView:focus .github-HunkView-line.is-selected .github-HunkView-lineNumber {
+	background-color: @background-color-selected;
+	color: @text-color-selected;
 }

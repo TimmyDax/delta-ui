@@ -21,9 +21,40 @@
 // Used on top of the editor, like the Command Palette.
 
 atom-panel.modal {
-  border: 1px solid @overlay-border-color;
-  border-top: none;
-  box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
+	border: none;
+	box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3), 0 0 1px 0 hsla(0,0%,0%,.2);
+	background: transparent;
+	margin-top: (@tab-height + 2);
+	padding: 0;
+
+	.select-list {
+		background: rgba(0,0,0,0.3);
+		backdrop-filter: blur(18px);
+		padding: @ui-spacing @ui-spacing 0;
+
+		.selected, .list-group li.selected {
+			color: hsla(0,0%,100%,.8);
+			background: hsla(0,0%,100%,.2);
+		}
+
+		.error-message {
+			text-align: center;
+			color: rgba(255,255,255,0.6);
+			text-shadow: 0 -1px 1px rgba(0,0,0,0.5);
+		}
+
+		ol.list-group {
+			margin: @ui-spacing 0 0 0;
+		}
+	}
+}
+
+.atom-dock-inner {
+	&, &.left, &.right {
+		&:not(.atom-dock-open){
+			min-width: 1px;
+		}
+	}
 }
 
 .atom-dock-resize-handle {
