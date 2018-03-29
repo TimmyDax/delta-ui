@@ -96,6 +96,55 @@
 	}
 }
 
+.form-control[disabled],
+fieldset[disabled] .form-control {
+	cursor: default;
+}
+
+select.form-control {
+
+	&, .settings-view & {
+		width: auto;
+	    -webkit-appearance: none;
+		background-color: lighten(@base-background-color, 10%);
+		background-image: url('data:image/svg+xml; utf8, <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="60px" viewBox="0 0 40 60" enable-background="new 0 0 40 60" xml:space="preserve"><rect fill="rgba(255,255,255,0.3)" width="40" height="60"/><g><polyline fill="none" stroke="rgba(0,0,0,0.8)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,35.5 20,42.5 27,35.5"/><polyline fill="none" stroke="rgba(0,0,0,0.8)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,25.5 20,18.5 27,25.5"/></g></svg>');
+		background-position: right;
+		background-repeat: no-repeat;
+		background-size: 17px;
+	    height: 24px;
+	    font-size: 12px;
+	    line-height: 23px;
+	    padding: 0 34px 0 10px;
+
+		&:hover, &:active, &:focus {
+			background-color: lighten(@base-background-color, 10%);
+		}
+
+		&:active, &:focus {
+			background-image: url('data:image/svg+xml; utf8, <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="60px" viewBox="0 0 40 60" enable-background="new 0 0 40 60" xml:space="preserve"><rect fill="rgba(255,255,255,0.4)" width="40" height="60"/><g><polyline fill="none" stroke="rgba(0,0,0,0.8)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,35.5 20,42.5 27,35.5"/><polyline fill="none" stroke="rgba(0,0,0,0.8)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,25.5 20,18.5 27,25.5"/></g></svg>');
+		}
+
+		&[disabled], &[disabled]:hover, &[disabled]:focus {
+			background-color: lighten(@base-background-color, 5%);
+			background-image: url('data:image/svg+xml; utf8, <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="60px" viewBox="0 0 40 60" enable-background="new 0 0 40 60" xml:space="preserve"><g><polyline fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,35.5 20,42.5 27,35.5"/><polyline fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,25.5 20,18.5 27,25.5"/></g></svg>');
+		}
+	}
+}
+
+.input-checkbox {
+	background: transparent;
+	border: 1px solid @input-border-color;
+
+	&:before, &:after {
+		top: 12px;
+		left: 5px;
+	}
+
+	&:checked {
+		border-color: @background-color-primary;
+	}
+}
+
 
 
 atom-text-editor[mini] {
