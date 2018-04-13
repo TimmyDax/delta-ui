@@ -28,7 +28,7 @@ atom-panel.modal {
 	padding: 0;
 
 	.select-list {
-		background: rgba(0,0,0,0.3);
+		background: fade(lighten(@base-background-color, 5%), 20);
 		backdrop-filter: blur(18px);
 		padding: @ui-spacing @ui-spacing 0;
 
@@ -39,12 +39,28 @@ atom-panel.modal {
 
 		.error-message {
 			text-align: center;
-			color: rgba(255,255,255,0.6);
-			text-shadow: 0 -1px 1px rgba(0,0,0,0.5);
+		}
+
+		.error-message,
+		.loading {
+		    padding: 0.5em 0.5em 1em;
 		}
 
 		ol.list-group {
-			margin: @ui-spacing 0 0 0;
+			margin: @ui-spacing 0 0;
+			padding: 0 0 @ui-spacing;
+		}
+	}
+}
+
+.command-palette {
+
+	.list-group {
+		color: hsla(0,0%,100%,.7);
+
+		.character-match {
+			font-weight: inherit;
+			color: hsla(0,0%,100%,.95);
 		}
 	}
 }
