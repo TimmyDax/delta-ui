@@ -24,3 +24,49 @@
     display: inline-block;
   }
 }
+
+@progress-border-radius: 6px;
+@progress-bar-color: @background-color-primary;
+@progress-bar-color-alt: mix(lighten(@progress-bar-color, 8%), yellow, 96%);
+// @progress-bar-color-alt: @background-color-atom-top;
+
+progress {
+	-webkit-appearance: none;
+    border-radius: 6px;
+	height: 6px;
+    margin: 3px 0;
+
+	&:not([value]){
+		border-radius: @progress-border-radius;
+		background-image: linear-gradient(to right, @progress-bar-color-alt 0%, @progress-bar-color 25%, @progress-bar-color-alt 50%, @progress-bar-color 75%, @progress-bar-color-alt 100%);
+		// background: linear-gradient(270deg, #246655, #482466);
+		background-size: 200% 200%;
+		background-position: 0 50%;
+		-webkit-animation: Cycle 2.5s linear infinite;
+
+		&::-webkit-progress-bar {
+			background: transparent;
+		}
+	}
+
+	&[value] {
+		border-radius: @progress-border-radius;
+
+		&::-webkit-progress-bar {
+			border-radius: @progress-border-radius;
+		    background-color: @text-editor-background-color;
+		}
+
+		&::-webkit-progress-value {
+			border-radius: @progress-border-radius;
+			background-color: @progress-bar-color;
+			background-image: linear-gradient(to right, @progress-bar-color 0%, mix(@progress-bar-color, @progress-bar-color-alt, 40%) 100%);
+			box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
+		}
+	}
+}
+
+@-webkit-keyframes Cycle {
+	0% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}

@@ -18,10 +18,10 @@
 @text-color-selected: lighten(@text-color, 13%);
 @text-color-bright: white;
 
-@text-color-info: lighten(@background-color-atom, 20%);
-@text-color-success: @text-color-info;
-@text-color-warning: lighten(@background-color-warning, 15%);
-@text-color-error: lighten(@background-color-error, 10%);
+@text-color-info: lighten(@background-color-primary, 25%);
+@text-color-success: lighten(@background-color-success, 26%);
+@text-color-warning: lighten(@background-color-warning, 22%);
+@text-color-error: lighten(@background-color-error, 12%);
 
 // Background colors
 @background-color-atom-top: #b3e299;
@@ -30,9 +30,9 @@
 @background-color-focus: @background-color-atom;
 
 @background-color-primary: #3569a0;
-@background-color-info: @background-color-atom;
-@background-color-success: @background-color-atom-bottom;
-@background-color-warning: #f58d34;
+@background-color-info: mix(@background-color-atom-top, @background-color-atom-bottom, 25%);
+@background-color-success: #259133;
+@background-color-warning: #dd9816;
 @background-color-error: #ed1c46;
 
 @background-color-highlight: lighten(@base-background-color, 5%);
@@ -69,7 +69,7 @@
 @button-background-color-selected: @button-background-color-hover;
 @button-border-color: @base-border-color;
 
-@field-background-color: lighten(@base-background-color, 10%);
+@field-background-color: lighten(@base-background-color, 6%);
 @text-editor-background-color: @field-background-color;
 @text-editor-color: lighten(@text-color, 14%);
 
@@ -78,7 +78,7 @@
 @tab-background-color: lighten(@tab-bar-background-color, 5%);
 @tab-background-color-active: lighten(@tab-bar-background-color, 12%);
 @tab-border-color: darken(@tab-background-color, 9%);
-@tab-background-color-down: darken(@tab-background-color, 10%);
+@tab-background-color-down: @tab-bar-background-color;
 
 @tree-view-background-color: @base-background-color;
 @tree-view-border-color: @base-border-color;
@@ -109,6 +109,7 @@
 
 @tab-height: 24px;
 @tab-max-width: 5000px;
+@tab-min-width: 120px;
 
 // Fields
 @ui-spacing: 6px;
