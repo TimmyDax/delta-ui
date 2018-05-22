@@ -61,9 +61,27 @@
 		}
 	}
 
-	.status-ignored .name {
-		color: fade(@tree-view-color, 80);
+	.status-ignored {
+
+		.name {
+			color: fade(@tree-view-color, 80);
+		}
+
+		&.selected {
+
+			& > .list-item,
+			&.list-item {
+
+				& > .name {
+
+					&, &::before {
+						color: @text-color-selected;
+					}
+				}
+			}
+		}
 	}
+	
 }
 
 .atom-dock-inner {

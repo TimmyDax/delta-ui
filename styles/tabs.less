@@ -43,6 +43,20 @@
 			&.icon:before {
 			    vertical-align: text-bottom;
 			}
+
+			&.temp {
+			    font-style: normal;
+			    color: @text-color-warning;
+			    font-weight: 200;
+			    letter-spacing: 0.1em;
+			}
+		}
+
+		&.active .title {
+
+			&.temp {
+				color: lighten(@text-color-warning, 8%);
+			}
 		}
 
 
@@ -155,8 +169,17 @@
 	.tab-bar {
 		.tab {
 			background-color: fade(@tab-background-color, 30%);
+
 			&.active {
 				background-color: @tab-background-color;
+			}
+
+			&.pending-tab {
+			    background-color: fade(@background-color-warning, 7%);
+
+				&.active{
+					background-color: fade(@background-color-warning, 14%);
+				}
 			}
 		}
 	}
