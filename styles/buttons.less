@@ -93,8 +93,12 @@
 		line-height: (5em / 3em);
 	}
 
-	.find-and-replace .btn-group-options & {
-		padding: 4px 0;
+	.btn-group-options & {
+
+		.find-and-replace &,
+		.project-find & {
+			padding: 4px 0;
+		}
 	}
 }
 
@@ -115,7 +119,7 @@
 
 	.header {
 		padding: (@ui-spacing / 2);
-		padding-top: ((@ui-spacing / 2) - 2);
+		padding-top: ((@ui-spacing / 2) - 1);
 	}
 
 	.btn-group-options {
