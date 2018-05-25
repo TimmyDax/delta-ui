@@ -22,7 +22,6 @@
 		border-left-color: @tooltip-background-color;
 	}
 
-
 	.tooltip-inner {
 		line-height: 1;
 		padding: .75em;
@@ -30,6 +29,7 @@
 		max-width: none;
 		letter-spacing: 0.05em;
 		background-color: @tooltip-background-color;
+		color: @tooltip-text-color;
 	}
 
 	.keystroke {
@@ -38,5 +38,32 @@
 		border-radius: max(2px, @component-border-radius / 2);
 		color: @text-color-selected;
 		background: @background-color-selected;
+	}
+
+	// mac os tooltip style
+
+	& {
+		box-shadow: 0 0.4em 1.4em rgba(0,0,0,0.3), 0 0 1px rgba(0,0,0,0.4);
+
+		&, &.top, &.right, &.bottom, &.left {
+			padding: 0;
+		}
+
+		.tooltip-arrow {
+			display: none;
+		}
+
+		.tooltip-inner {
+			border-radius: 1px;
+			padding: 4px 7px;
+			background: linear-gradient(to bottom, lighten(@tooltip-background-color, 5%), @tooltip-background-color);
+			backdrop-filter: blur(10px);
+		}
+
+		.keystroke {
+			padding: 2px 5px 3px;
+			margin: 0 -6px 0 2px;
+		    border-radius: 2px;
+		}
 	}
 }

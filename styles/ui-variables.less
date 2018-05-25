@@ -20,8 +20,8 @@
 
 @text-color-info: lighten(@background-color-primary, 25%);
 @text-color-success: lighten(@background-color-success, 26%);
-@text-color-warning: lighten(@background-color-warning, 22%);
-@text-color-error: lighten(@background-color-error, 12%);
+@text-color-warning: lighten(@background-color-warning, 17%);
+@text-color-error: lighten(@background-color-error, 5%);
 
 // Background colors
 @background-color-atom-top: #b3e299;
@@ -31,9 +31,9 @@
 
 @background-color-primary: #3569a0;
 @background-color-info: mix(@background-color-atom-top, @background-color-atom-bottom, 25%);
-@background-color-success: #259133;
-@background-color-warning: #dd9816;
-@background-color-error: #ed1c46;
+@background-color-success: #29ce42;
+@background-color-warning: #ffbf2f;
+@background-color-error: #ff5750;
 
 @background-color-highlight: lighten(@base-background-color, 5%);
 @background-color-selected: lighten(@base-background-color, 10%);
@@ -80,14 +80,16 @@
 @tab-border-color: darken(@tab-background-color, 9%);
 @tab-background-color-down: @tab-bar-background-color;
 
+@table-border-color: lighten(@base-background-color, 11%);
+
 @tree-view-background-color: @base-background-color;
 @tree-view-border-color: @base-border-color;
 @tree-view-color: darken(@text-color, 20%);
 
 @status-bar-background-color: darken(@base-background-color, 5%);
 
-@tooltip-background-color: @status-bar-background-color;
-@tooltip-text-color: darken(@text-color, 20%);
+@tooltip-background-color: lighten(@base-background-color, 80%);
+@tooltip-text-color: @base-background-color;
 
 // Site colors
 @ui-site-color-1: #79b4eb; // blue
