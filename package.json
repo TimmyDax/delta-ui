@@ -1,7 +1,7 @@
 {
   "name": "delta-ui",
   "theme": "ui",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A MacOS-like dark theme for Atom, based on my Delta theme for Sublime Text",
   "keywords": [
     "ui",
