@@ -36,14 +36,18 @@
 		padding: .15em .4em;
 		margin: 0 -.3em 0 .25em;
 		border-radius: max(2px, @component-border-radius / 2);
-		color: @text-color-selected;
-		background: @background-color-selected;
+		background: @background-color-info;
+		color: fade(@text-color-bright, 98%);
 	}
 
 	// mac os tooltip style
 
 	& {
 		box-shadow: 0 0.4em 1.4em rgba(0,0,0,0.3), 0 0 1px rgba(0,0,0,0.4);
+
+		&.in {
+			opacity: 1;
+		}
 
 		&, &.top, &.right, &.bottom, &.left {
 			padding: 0;
@@ -56,7 +60,7 @@
 		.tooltip-inner {
 			border-radius: 1px;
 			padding: 4px 7px;
-			background: linear-gradient(to bottom, lighten(@tooltip-background-color, 5%), @tooltip-background-color);
+			background: linear-gradient(to bottom, fade(lighten(@tooltip-background-color, 5%), 90%), fade(@tooltip-background-color, 90%));
 			backdrop-filter: blur(10px);
 		}
 

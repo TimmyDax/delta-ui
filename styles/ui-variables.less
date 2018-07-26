@@ -10,18 +10,16 @@
 // Try to edit some of the values below to see your theme change.
 // A good start is to change the color of the `@base-background-color` variable.
 
+// Shaders
+@base-darken-color: black;
+@base-lighten-color: white;
 
-// Text Colors
-@text-color: lighten(@base-background-color, 66%);
-@text-color-subtle: darken(@text-color, 10%);
-@text-color-highlight: lighten(@text-color, 5%);
-@text-color-selected: lighten(@text-color, 13%);
-@text-color-bright: white;
+// Base colors
+@base-base-background-color: black;
+@base-foreground-color: white;
 
-@text-color-info: lighten(@background-color-primary, 25%);
-@text-color-success: lighten(@background-color-success, 26%);
-@text-color-warning: lighten(@background-color-warning, 17%);
-@text-color-error: lighten(@background-color-error, 5%);
+@base-background-color: mix(@base-base-background-color, @base-foreground-color, 87%);
+@base-border-color: mix(@base-darken-color, @base-background-color, 25%);
 
 // Background colors
 @background-color-atom-top: #b3e299;
@@ -35,16 +33,24 @@
 @background-color-warning: #f0ae13;
 @background-color-error: #ff3d33;
 
-@background-color-highlight: lighten(@base-background-color, 5%);
-@background-color-selected: lighten(@base-background-color, 10%);
-@app-background-color: darken(@base-background-color, 5%);
+// Text Colors
+@text-color: fade(@base-foreground-color, 70%);
+@text-color-subtle: fade(@base-foreground-color, 60%);
+@text-color-highlight: fade(@base-foreground-color, 80%);
+@text-color-selected: fade(@base-foreground-color, 80%);
+@text-color-bright: @base-foreground-color;
 
-// Base colors
-@base-background-color: hsl(0, 0%, 10%);
-@base-border-color: darken(@base-background-color, 5%);
+@text-color-info: mix(@base-foreground-color, @background-color-primary, 25%);
+@text-color-success: mix(@base-foreground-color, @background-color-success, 26%);
+@text-color-warning: mix(@base-foreground-color, @background-color-warning, 17%);
+@text-color-error: mix(@base-foreground-color, @background-color-error, 5%);
+
+@background-color-highlight: mix(@base-foreground-color, @base-background-color, 5%);
+@background-color-selected: mix(@base-foreground-color, @base-background-color, 10%);
+@app-background-color: transparent;
 
 // Component colors
-@pane-item-background-color: @base-background-color;
+@pane-item-background-color: mix(@base-foreground-color, @base-background-color, 5%);
 @pane-item-border-color: @base-border-color;
 
 @input-background-color: @app-background-color;
@@ -53,44 +59,71 @@
 @tool-panel-background-color: @base-background-color;
 @tool-panel-border-color: @base-border-color;
 
-@inset-panel-background-color: lighten(@base-background-color, 4%);
+@inset-panel-background-color: mix(@base-foreground-color, @base-background-color, 4%);
 @inset-panel-border-color: @base-border-color;
 
-@panel-heading-background-color: lighten(@base-background-color, 4%);
+@panel-heading-background-color: mix(@base-foreground-color, @base-background-color, 4%);
 @panel-heading-border-color: @base-border-color;
 
-@overlay-background-color: lighten(@base-background-color, 5%);
+@overlay-background-color: mix(@base-foreground-color, @base-background-color, 5%);
 @overlay-border-color: @base-border-color;
 
-@button-background-color: lighten(@base-background-color, 25%);
-@button-background-color-active: lighten(@base-background-color, 70%);
-@button-color-active: darken(@base-background-color, 10%);
-@button-background-color-hover: lighten(@button-background-color, 12%);
+@button-background-color: mix(@base-lighten-color, @base-base-background-color, 34%);
+@button-background-color-active: mix(@base-foreground-color, @base-background-color, 70%);
+@button-color-active: mix(@base-foreground-color, @base-background-color, 10%);
+@button-background-color-hover: mix(@base-lighten-color, @button-background-color, 12%);
 @button-background-color-selected: @button-background-color-hover;
 @button-border-color: @base-border-color;
+@button-color: fade(@text-color, 80%);
 
-@field-background-color: lighten(@base-background-color, 6%);
+@widget-foreground: fade(@base-lighten-color, 90%);
+@widget-background-image: linear-gradient(to bottom, mix(@base-lighten-color, @base-background-color, 15%) 0%, mix(@base-lighten-color, @base-background-color, 25%) 100%);
+@widget-background-image-selected: linear-gradient(to bottom, mix(@base-base-background-color, @background-color-primary, 5%) 0%, mix(@base-lighten-color, @background-color-primary, 5%) 100%);
+@widget-border: mix(@base-darken-color, @base-background-color, 20%);
+@widget-border-selected: mix(@base-darken-color, @background-color-primary, 20%);
+@widget-foreground-shadow: 0, 0, 1px, 0, fade(@base-darken-color, 20%);
+@widget-shadow: inset 0 1px 1px fade(@base-foreground-color, 20%);
+
+@checkbox-size: 14px;
+@radio-size: 16px;
+
+// @field-background-color: mix(@base-lighten-color, @base-background-color, 18%);
+@field-background-color: @button-background-color;
 @text-editor-background-color: @field-background-color;
-@text-editor-color: lighten(@text-color, 14%);
+@text-editor-color: mix(@base-foreground-color, @text-color, 14%);
+@text-editor-selection: fade(mix(@background-color-primary, @base-background-color, 80%), 50%);
 
-@tab-bar-background-color: lighten(@base-background-color, 5%);
-@tab-bar-border-color: darken(@tab-bar-background-color, 2%);
-@tab-background-color: lighten(@tab-bar-background-color, 5%);
-@tab-background-color-active: lighten(@tab-bar-background-color, 12%);
-@tab-border-color: darken(@tab-background-color, 9%);
+@select-background-color: @field-background-color;
+@select-button-background-color: fade(mix(@base-darken-color, @base-foreground-color, 20%), 50%);
+// @select-button-background-color: fade(@base-foreground-color, 30%);
+@select-button-foreground-color: fade(@base-background-color, 80%);
+// @select-button-foreground-color: fade(mix(@base-lighten-color, @base-background-color, 20%), 80%);
+@select-button-foreground-disabled-color: fade(@base-foreground-color, 30%);
+
+@input-shadow: 0 0 0 1px fade(@base-darken-color, 6%), 0 1px 0 fade(@base-darken-color, 8%);
+@button-highlight-shadow: inset 0 1px 0px fade(@base-lighten-color, 11%);
+@input-focus-shadow: 0 0 2px mix(@background-color-focus, @base-lighten-color, 80%), 0 0 7px mix(@background-color-focus, @base-lighten-color, 90%);
+
+@tab-bar-background-color: @base-background-color;
+@tab-bar-border-color: @base-background-color;
+@tab-background-color: fade(@base-foreground-color, 5%);
+@tab-background-color-active: mix(@base-lighten-color, @base-background-color, 10%);
+@tab-border-color: mix(@base-darken-color, @base-background-color, 25%);
 @tab-background-color-down: @tab-bar-background-color;
+@tab-color: fade(@text-color, 50%);
+@tab-color-selected: fade(@text-color, 80%);
 
-@table-border-color: lighten(@base-background-color, 11%);
+@table-border-color: mix(@base-foreground-color, @base-background-color, 11%);
 
 @tree-view-background-color: @base-background-color;
 @tree-view-border-color: @base-border-color;
-@tree-view-color: darken(@text-color, 20%);
+@tree-view-color: mix(@base-foreground-color, @text-color, 20%);
 
-@title-bar-background-color: darken(@base-background-color, 3%);
-@status-bar-background-color: darken(@base-background-color, 5%);
+@title-bar-background-color: mix(@base-foreground-color, @base-background-color, 3%);
+@status-bar-background-color: fade(mix(@base-darken-color, @base-base-background-color, 20%), 50%);
 
-@tooltip-background-color: lighten(@base-background-color, 80%);
-@tooltip-text-color: @base-background-color;
+@tooltip-background-color: mix(@base-lighten-color, @base-darken-color, 88%);
+@tooltip-text-color: mix(@base-lighten-color, @base-darken-color, 12%);
 
 // Site colors
 @ui-site-color-1: #79b4eb; // blue

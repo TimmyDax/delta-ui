@@ -144,50 +144,118 @@ select.form-control {
 		width: auto;
 	    -webkit-appearance: none;
 		background-color: @field-background-color;
-		background-image: url('data:image/svg+xml; utf8, <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="60px" viewBox="0 0 40 60" enable-background="new 0 0 40 60" xml:space="preserve"><rect fill="rgba(255,255,255,0.3)" width="40" height="60"/><g><polyline fill="none" stroke="rgba(0,0,0,0.8)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,35.5 20,42.5 27,35.5"/><polyline fill="none" stroke="rgba(0,0,0,0.8)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,25.5 20,18.5 27,25.5"/></g></svg>');
+		background-image: url('data:image/svg+xml; utf8, <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="60px" viewBox="0 0 40 60" enable-background="new 0 0 40 60" xml:space="preserve"><rect fill="@{select-button-background-color}" width="40" height="60"/><g><polyline fill="none" stroke="@{select-button-foreground-color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,35.5 20,42.5 27,35.5"/><polyline fill="none" stroke="@{select-button-foreground-color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,25.5 20,18.5 27,25.5"/></g></svg>');
 		background-position: right;
 		background-repeat: no-repeat;
-		background-size: 17px;
-	    height: 24px;
+		background-size: 18px;
+	    height: 22px;
 	    font-size: 12px;
 	    line-height: 23px;
 	    padding: 0 34px 0 10px;
+		border: none;
+		box-shadow: @button-highlight-shadow, @input-shadow;
 
 		&:hover, &:active, &:focus {
-			background-color: lighten(@base-background-color, 10%);
+			background-color: @field-background-color;
+			box-shadow: @button-highlight-shadow, @input-shadow;
 		}
 
 		&:active, &:focus {
-			background-image: url('data:image/svg+xml; utf8, <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="60px" viewBox="0 0 40 60" enable-background="new 0 0 40 60" xml:space="preserve"><rect fill="rgba(255,255,255,0.4)" width="40" height="60"/><g><polyline fill="none" stroke="rgba(0,0,0,0.8)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,35.5 20,42.5 27,35.5"/><polyline fill="none" stroke="rgba(0,0,0,0.8)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,25.5 20,18.5 27,25.5"/></g></svg>');
+			background-image: url('data:image/svg+xml; utf8, <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="60px" viewBox="0 0 40 60" enable-background="new 0 0 40 60" xml:space="preserve"><rect fill="@{select-button-background-color}" width="40" height="60"/><g><polyline fill="none" stroke="@{select-button-foreground-color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,35.5 20,42.5 27,35.5"/><polyline fill="none" stroke="@{select-button-foreground-color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,25.5 20,18.5 27,25.5"/></g></svg>');
+			box-shadow: @button-highlight-shadow, @input-shadow;
 		}
 
 		&[disabled], &[disabled]:hover, &[disabled]:focus {
-			background-color: lighten(@base-background-color, 5%);
-			background-image: url('data:image/svg+xml; utf8, <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="60px" viewBox="0 0 40 60" enable-background="new 0 0 40 60" xml:space="preserve"><g><polyline fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,35.5 20,42.5 27,35.5"/><polyline fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,25.5 20,18.5 27,25.5"/></g></svg>');
+			background-color: fade(@field-background-color, 60%);
+			background-image: url('data:image/svg+xml; utf8, <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="60px" viewBox="0 0 40 60" enable-background="new 0 0 40 60" xml:space="preserve"><g><polyline fill="none" stroke="@{select-button-foreground-disabled-color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,35.5 20,42.5 27,35.5"/><polyline fill="none" stroke="@{select-button-foreground-disabled-color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="13,25.5 20,18.5 27,25.5"/></g></svg>');
+			box-shadow: @button-highlight-shadow, @input-shadow;
 		}
 	}
 }
 
 .input-checkbox {
-	background: transparent;
-	border: 1px solid @button-background-color;
+	background: @widget-background-image;
+	border: 1px solid @widget-border;
+	width: @checkbox-size;
+	height: @checkbox-size;
+	transition: border 0.05s, background 0.1s;
+	box-shadow: @widget-shadow;
 
 	&:before, &:after {
-		top: 12px;
-		left: 5px;
+		content: "";
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    height: 100%;
+		width: 100%;
+	    border-radius: 0;
+	    background-color: transparent;
+	    transform-origin: 0 0;
+		opacity: 1;
+	    transition: background 0.05s cubic-bezier(0.5, 0.15, 0.2, 1);
+		margin: 0;
+		transform: inherit;
+	}
+
+	&:before {
+		background-image: url('data:image/svg+xml; utf8, <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><path fill="@{widget-foreground}" d="M23.294,6.315c-0.893-0.65-2.158-0.434-2.827,0.484l-8.369,11.488l-4.102-4.003c-0.79-0.772-2.057-0.756-2.828,0.034c-0.771,0.79-0.756,2.057,0.034,2.828l5.725,5.588c0.36,0.351,0.818,0.531,1.284,0.557c0.038,0.003,0.075,0.009,0.113,0.009c0.046,0,0.091-0.007,0.136-0.01c0.594-0.033,1.174-0.32,1.558-0.847L23.7,9.154C24.368,8.237,24.187,6.966,23.294,6.315z"/></svg>');
+		filter: drop-shadow(@widget-foreground-shadow);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 0;
 	}
 
 	&:checked {
-		border-color: @background-color-focus;
+		// background: @widget-background-image-selected;
+		// border: 1px solid @widget-border-selected;
+		// box-shadow: none;
+
+		&:before,
+		&:after {
+			transform: inherit;
+		}
+
+		&:before {
+			background-size: @checkbox-size - 2px;
+		}
 	}
 }
 
 .input-radio {
-	box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3);
-    background: transparent;
+	background: @widget-background-image;
+	border: 1px solid @widget-border;
+	width: @radio-size;
+	height: @radio-size;
+	transition: border 0.05s, background 0.1s;
+	box-shadow: @widget-shadow;
+
+	&:before {
+		content: "";
+	    position: absolute;
+	    width: 100%;
+	    height: 100%;
+	    border-radius: 0;
+	    border: none;
+	    background-clip: content-box;
+	    background-color: transparent;
+	    transform: scale(0);
+	    transition: transform 0.1s cubic-bezier(0.5, 0.15, 0.2, 1);
+
+		background-image: url('data:image/svg+xml; utf8, <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve"><circle fill="@{widget-foreground}" cx="16" cy="16" r="6"/></svg>');
+		filter: drop-shadow(@widget-foreground-shadow);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 0;
+	}
 
 	&:checked {
-		box-shadow: none;
+		// background: @widget-background-image-selected;
+		// border: 1px solid @widget-border-selected;
+		// box-shadow: none;
+
+		&:before {
+			background-size: @radio-size;
+		}
 	}
 }
 
@@ -195,7 +263,8 @@ select.form-control {
 
 atom-text-editor[mini] {
 	background-color: @text-editor-background-color;
-	border: 1px solid @button-background-color;
+	// border: 1px solid fade(@base-lighten-color, 40%);
+	box-shadow: @button-highlight-shadow, @input-shadow;
 	border-radius: 2px;
 	color: @text-editor-color;
 	padding: 0 0.8em;
@@ -209,5 +278,13 @@ atom-text-editor[mini] {
 	.overlay &,
 	atom-panel.modal & {
 		margin-bottom: @ui-spacing;
+	}
+
+	div {
+		background-color: transparent !important;
+
+		.highlight {
+			background-color: @text-editor-selection !important;
+		}
 	}
 }
